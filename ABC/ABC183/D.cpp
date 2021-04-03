@@ -5,19 +5,16 @@ using namespace std;
 int need[200001];
 
 int main(){
-    int  N,W;
-    vector<vector<int>> M(N,vector<int>(3));
+    int  N;
+    long long W;
     cin >> N >> W;
-    for(int n=0;n<N;n++) cin >> M[n][0] >> M[n][1] >> M[n][2];
+    vector<long long> S(N),T(N),P(N);
+    for(int n=0;n<N;n++) cin >> S[n] >> T[n] >> P[n];
+    //入力終わり
+    int max_time = 0;
+    for(int n=0;n<N;n++) max_time = max(max_time,T[n]); 
 
-    bool can = true;
-    for(int n=0;n<N;n++){
-        for(int j=M[n][0];j<M[n][1];j++){
-            need[j] += M[n][2];
-            if(need[j]>W) can = false;
-        }
-    }
-    if(can) cout << "Yes" << endl;
-    else cout << "No" << endl;
-    return 0;
+    vector<long long> need(max_time+1);
+    
+
 }
